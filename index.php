@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include "style.css";
     if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
         header ("Location: products.php");
     }
@@ -13,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-   
+   <div class='container' id='container'>
    <form action="register.php">
    <input type="hidden" name="action" value="register">
     <input type="text" name="name" placeholder="name">
@@ -28,5 +29,6 @@
         <p>Allready have an account</p>
         <input type="submit" value="log_in">
     </form>
+</div>
 </body>
 </html>
