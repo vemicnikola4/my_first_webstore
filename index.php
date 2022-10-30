@@ -13,6 +13,11 @@
     // }
   
     ?>
+    <?php
+    if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
+        header ("Location: products.php");
+    }
+    ?>
    <form action="register.php">
    <input type="hidden" name="action" value="register">
     <input type="text" name="name" placeholder="name">
