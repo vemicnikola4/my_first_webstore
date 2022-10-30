@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    // if (isset ($_SESSION['user']) || isset($_COOKIE['user'])){
+    //     header("Location: proizvodi.php");
+    // }
+  
+    ?>
    <form action="register.php">
    <input type="hidden" name="action" value="register">
     <input type="text" name="name" placeholder="name">

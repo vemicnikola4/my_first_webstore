@@ -49,7 +49,7 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'log_in'){
         }
         $_SESSION['user']=$email;
         header("Location: log_in.php");
-        
+        l
     }
 }
 ?>

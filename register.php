@@ -8,7 +8,11 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     $password = $_GET['password'];
     $repeat_password = $_GET['repeat_password'];
     $all_users = $base -> all_users();
-    if ( $password == $repeat_password){
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format";
+        die ("Invalid email format");
+    }else{
+        if ( $password == $repeat_password){
         $have_account = false;
         for ( $i = 0; $i < count($all_users); $i++){
             if ($all_users[$i]['email'] == $email ){
@@ -44,6 +48,8 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     }else{
         echo "REPEAT THE SAME PASSWORD";
         echo "<a href='index.php'>BACK TO REGISTRATION FORM</a>";
+        }
     }
+    
 }
 ?>
