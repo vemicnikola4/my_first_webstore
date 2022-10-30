@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>HAllo welcome to our product page</h1>
+    <a href="logout.php?action=unset">LOGOUT</a>
 </body>
 </html>

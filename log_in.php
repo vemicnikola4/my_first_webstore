@@ -22,34 +22,29 @@ if (isset($_GET['action'])&& $_GET['action'] == "log_in"){
                     $_SESSION['user']=$email;
                     header ("Location: products.php");
                 }
-            }else{
-                echo "INVALID EMAIL OR PASSWORD TRY AGAIN";
-                echo  '<form action="log_in.php">';
-                echo  '<input type="hidden" name="action" value="log_in">';
-                echo  '<input type="text" name="email" placeholder="email">';
-                echo  '<input type="text" name="password" placeholder="password">';
-                echo "<br>";
-                echo "Remember me on this computer";
-                echo  '<input type="checkbox" name="remember">';
-                echo "<br>";
-                echo  '<input type="submit" value="log_in">';
-                echo  '</form>';
-            }
+            } 
         }
+        echo "INVALID EMAIL OR PASSWORD TRY AGAIN";
+        echo  '<form action="log_in.php">';
+        echo  '<input type="hidden" name="action" value="log_in">';
+        echo  '<input type="text" name="email" placeholder="email">';
+        echo  '<input type="text" name="password" placeholder="password">';
+        echo "<br>";
+        echo "Remember me on this computer";
+        echo  '<input type="checkbox" name="remember">';
+        echo "<br>";
+        echo  '<input type="submit" value="log_in">';
+        echo  '</form>';
     }
 }
-// if (isset($_GET['action'])&& $_GET['action'] !== "log_in"){
-//     echo  '<form action="log_in.php">';
-//     echo  '<input type="hidden" name="action" value="log_in">';
-//     echo  '<input type="text" name="email" placeholder="email">';
-//     echo  '<input type="text" name="password" placeholder="password">';
-//     echo  '<input type="submit" value="log_in">';
-//     echo  '</form>';
-// }
-// echo '<form action="log_in.php">';
-// echo '<input type="hidden" name="action" value="log_out">';
-// echo '<input type="submit"  value="log_out">';
-// echo '</form>';
+if (isset($_GET['action'])&& $_GET['action'] !== "log_in"){
+    echo  '<form action="log_in.php">';
+    echo  '<input type="hidden" name="action" value="log_in">';
+    echo  '<input type="text" name="email" placeholder="email">';
+    echo  '<input type="text" name="password" placeholder="password">';
+    echo  '<input type="submit" value="log_in">';
+    echo  '</form>';
+}
 
 
 

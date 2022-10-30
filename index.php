@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
+        header ("Location: products.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    // if (isset ($_SESSION['user']) || isset($_COOKIE['user'])){
-    //     header("Location: proizvodi.php");
-    // }
-  
-    ?>
-    <?php
-    if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
-        header ("Location: products.php");
-    }
-    ?>
+   
    <form action="register.php">
    <input type="hidden" name="action" value="register">
     <input type="text" name="name" placeholder="name">
