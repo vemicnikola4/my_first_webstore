@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 #container{
-    background-color: aqua;
+    background-color: beige;
     height: 100vh;
     width: 100vw;
 }
@@ -36,11 +36,11 @@
     padding: 20px;
     color:white;
 }
-.navigation{
+.iner_header .navigation{
     float: right;
     height: 100%;
 }
-.navigation li{
+.iner_header .navigation li{
     display: table;
     height: 100%;
     float: left;
@@ -60,6 +60,56 @@
 }
 .logo_container h1 a:hover{
     color: black;
+}
+.footer_container{
+    height: 150px;
+    display: block;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    
+}
+.iner_footer{
+    width: 1000px;
+    color: white;
+    display: block;
+    background-color: red;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.iner_footer .navigation{
+    text-align: center;
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+}
+.iner_footer .navigation li{
+    margin-top:15px;
+    font-weight: bold;
+}
+.iner_footer .navigation h3{
+    margin-top:10px;
+}
+.form_div{
+    padding: 25px;
+}
+.form_div form input{
+    padding: 5px;
+    border-radius: 5%;
+}
+.form_div form{
+    padding: 5px;
+}
+.form_div form p{
+    padding-bottom: 5px;
+
+}
+.form_div{
+    padding-top: 5px;
+    
 }
 
 </style>

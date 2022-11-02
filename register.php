@@ -1,5 +1,8 @@
 <?php
 include_once "class_database.php";
+if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
+    header ('Location:proizvodi.php');
+}
 if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     if (isset($_GET['name'])&& isset($_GET['lastname']) && isset($_GET['email']) && isset($_GET['password']) && isset($_GET['repeat_password']));
     $name = $_GET['name'];
@@ -9,6 +12,7 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     $repeat_password = $_GET['repeat_password'];
     $all_users = $base -> all_users();
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //this function only checks if the input looks like an email. If we whant to realy check if the email is real we need send a email to that address and ask a person to click on link we just sent so the validation process is complet.
         $emailErr = "Invalid email format";
         die ("Invalid email format");
     }else{

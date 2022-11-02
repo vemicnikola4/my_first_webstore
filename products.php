@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +11,22 @@
 <?php
 include_once "header_footer.php";
 include_once "style.css";
-echo top_header();
 ?>
 <body>
+    <div id='container'>
+    <?php  
+        echo top_header();
+        if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
+    ?>
     <h1>HAllo welcome to our product page</h1>
     <a href="logout.php?action=unset">LOGOUT</a>
+    <?php  
+        }else{
+            echo "<p>NISTE ULOGOVANI</p>";
+            echo "<a href='index.php'>ULOGUJTE SE</a>";
+        }
+        echo bottom_footer();
+    ?>
+    </div>
 </body>
 </html>

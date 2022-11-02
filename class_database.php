@@ -6,7 +6,7 @@ class Database{
         if ($this->conn->connect_error){
             echo "JDK connection error " . $this->conn->connect_error;
         }else{
-            echo "<p>Connected</p>";
+            echo "<p style='display:none'>Connected</p>";
         }
     }
     function select($select){
