@@ -10,22 +10,35 @@
 </head>
 <?php
 include_once "header_footer.php";
+include_once "class_database.php";
 include_once "style.css";
 ?>
 <body>
-    <div id='container'>
+<div id='container'>
     <?php  
         echo top_header();
-        if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
-    ?>
-    <h1>HAllo welcome to our product page</h1>
-    <a href="logout.php?action=unset">LOGOUT</a>
-    <?php  
-        }else{
-            echo "<p>NISTE ULOGOVANI</p>";
-            echo "<a href='index.php'>ULOGUJTE SE</a>";
-        }
-        echo bottom_footer();
+       if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
+        echo "<div class='all_products_container'>";
+           $products = $base -> show_all_products();
+           for ( $i = 0; $i < count($products);$i++ ){
+            echo "<div class='product_container'>";
+            echo "<table border=solid>";
+            echo "<tr><td>".$products[$i]['barcode']."</td></tr>";
+            echo "<tr><td>".$products[$i]['name']."</td></tr>";
+            echo "<tr><td><img src=".$products[$i]['picture']."></td></tr>";
+            echo "<tr><td>".$products[$i]['price']."</td></tr>";
+            echo "<tr><td>".$products[$i]['promo_price']."</td></tr>";
+            echo "</table>";
+            echo "</div>";
+           }
+        echo "</div>";
+           
+       }else{
+           echo "<p>NISTE ULOGOVANI</p>";
+           echo "<a href='index.php'>ULOGUJTE SE</a>";
+       }
+       echo bottom_footer();
+       
     ?>
     </div>
 </body>

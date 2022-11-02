@@ -4,7 +4,7 @@
         unset($_SESSION['user']);
         setcookie('user', 0, time()-60*60*24, "/");
         echo "<p>Uspesno ste se izlogovali!</p>";
-        header("Location: index.php");
+        header("Location: index.php");`
     }
 
 ?>

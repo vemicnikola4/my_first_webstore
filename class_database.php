@@ -40,6 +40,14 @@ class Database{
             die( "NEUSPESAN UPIT ". $all_users['message']);
         }
     }
+    function show_all_products(){
+        $all_products = $this-> select("SELECT * FROM products");
+        if ($all_products['sucssesful'] == true){
+            return $all_products['array'];
+        }else{
+            die( "NEUSPESAN UPIT ". $all_products['message']);
+        }
+    }
 }
 $base = new Database('web_store');
 

@@ -1,5 +1,8 @@
 <?php
 include_once "class_database.php";
+include_once "header_footer.php";
+echo "<div class='container'>";
+echo top_header();
 if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
     header ('Location:proizvodi.php');
 }
@@ -56,4 +59,5 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     }
     
 }
+echo bottom_footer();
 ?>
