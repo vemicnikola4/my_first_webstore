@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<?php
+include_once "header_footer.php";
+include_once "style.css";
+echo top_header();
+?>
 <body>
     <h1>HAllo welcome to our product page</h1>
     <a href="logout.php?action=unset">LOGOUT</a>
