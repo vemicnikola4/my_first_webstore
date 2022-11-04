@@ -48,6 +48,25 @@ class Database{
             die( "NEUSPESAN UPIT ". $all_products['message']);
         }
     }
+    function add_to_cart($user_email,$product_barcode,$time){
+        $insert = $this->comand("INSERT INTO cart (`user_email`, `product_barcode`, `time`) VALUES ('$user_email','$product_barcode','$time')");
+    }
+    function show_cart($user){
+        $all_products = $this-> select("SELECT * FROM products WHERE user_email=$user");
+        if ($all_products['sucssesful'] == true){
+            return $all_products['array'];
+        }else{
+            die( "NEUSPESAN UPIT ". $all_products['message']);
+        }
+    }
+    function select_one_product($barcode){
+        $product = $this-> select("SELECT * FROM products WHERE barcode=$barcode");
+        if ($product['sucssesful'] == true){
+            return $product['array'];
+        }else{
+            die( "NEUSPESAN UPIT ". $product['message']);
+        }
+    }
 }
 $base = new Database('web_store');
 

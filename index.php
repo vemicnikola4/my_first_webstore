@@ -19,7 +19,7 @@
     <?php echo top_header(); ?>
     <div class='form_div'>
    <form action="register.php">
-   <input type="hidden" name="action" value="register">
+    <input type="hidden" name="action" value="register">
     <input type="text" name="name" placeholder="name">
     <input type="text" name="lastname" placeholder="lastname">
     <input type="text" name="email" placeholder="email">

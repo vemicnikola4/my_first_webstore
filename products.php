@@ -21,13 +21,14 @@ include_once "style.css";
         echo "<div class='all_products_container'>";
            $products = $base -> show_all_products();
            for ( $i = 0; $i < count($products);$i++ ){
+            $product_barcode = $products[$i]['barcode'];
             echo "<div id='product_$i' class='product_container'>";
             echo "<table>";
             echo "<tr><td>".$products[$i]['name']."</td></tr>";
             echo "<tr><td><img src='photos/".$products[$i]['picture']."'></td></tr>";
             echo "<tr><td>".$products[$i]['price']."</td></tr>";
             echo "<tr><td>".$products[$i]['promo_price']."</td></tr>";
-            echo "<tr><td><a href='add_to_cart.php'>ADD TO CART<a/></td></tr>";
+            echo "<tr><td><a href='add_to_cart.php?action=add_to_cart&barcode=$product_barcode'>ADD TO CART<a/></td></tr>";
             echo "</table>";
             echo "</div>";
            }
