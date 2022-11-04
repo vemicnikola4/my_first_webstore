@@ -4,7 +4,7 @@ include_once "class_database.php";
 include_once "header_footer.php";
 include_once "style.css";
 
-echo "<div class='container'>";
+echo "<div id='container'>";
 echo top_header();
 if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
     header ("Location: products.php");
@@ -14,7 +14,7 @@ if (isset($_GET['action'])&& $_GET['action'] == "log_in"){
         $email = $_GET['email'];
         $password = $_GET['password'];
         if ( $email == "" || $password == ""){
-            echo "<div class='form_div'>";
+            echo "<div style='padding-left:50px;padding-top:50px'>";
             echo "<p>ADD EMAIL AND PASWORD</p>";
             echo "</div>";
         }else{

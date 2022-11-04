@@ -21,22 +21,27 @@ include_once "style.css";
         echo "<div class='all_products_container'>";
            $products = $base -> show_all_products();
            for ( $i = 0; $i < count($products);$i++ ){
-            echo "<div class='product_container'>";
-            echo "<table border=solid>";
-            echo "<tr><td>".$products[$i]['barcode']."</td></tr>";
+            echo "<div id='product_$i' class='product_container'>";
+            echo "<table>";
             echo "<tr><td>".$products[$i]['name']."</td></tr>";
-            echo "<tr><td><img src=".$products[$i]['picture']."></td></tr>";
+            echo "<tr><td><img src='photos/".$products[$i]['picture']."'></td></tr>";
             echo "<tr><td>".$products[$i]['price']."</td></tr>";
             echo "<tr><td>".$products[$i]['promo_price']."</td></tr>";
+            echo "<tr><td><a href='add_to_cart.php'>ADD TO CART<a/></td></tr>";
             echo "</table>";
             echo "</div>";
            }
         echo "</div>";
            
        }else{
-           echo "<p>NISTE ULOGOVANI</p>";
-           echo "<a href='index.php'>ULOGUJTE SE</a>";
+        echo "<div class='form_div'>";
+        echo "<p>NISTE ULOGOVANI</p>";
+        echo "<a href='index.php'>ULOGUJTE SE</a>";
+        echo "</div>";
+        
+
        }
+       echo "<p><a href='logout.php?action=unset'>Logout</a></p>";
        echo bottom_footer();
        
     ?>
