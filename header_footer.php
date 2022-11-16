@@ -8,7 +8,7 @@ function top_header(){
     echo "<ul class='navigation'>";
     echo "<li><a href='index.php'>Home</a></li>";
     echo "<li><a href='products.php'>Products</a></li>";
-    echo "<li><a href='cart.php'>Cart</a></li>";
+    echo "<li><a href='add_to_cart.php'>Cart</a></li>";
     echo "</div>";
     echo "</div>";
 }
