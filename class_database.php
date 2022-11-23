@@ -67,6 +67,10 @@ class Database{
             die( "NEUSPESAN UPIT ". $product['message']);
         }
     }
+    function submit_order($order_number,$user_email,$product_barcode,$quantity,$price,$total_price, $time){
+        $user_email = $this -> conn-> real_escape_string($user_email);
+        $insert = $this -> comand( "INSERT INTO `cart`(`order_number`, `user_email`, `product_barcode`, `quantity`, `price`, `total_price`, `time`) VALUES ($order_number,'$user_email','$product_barcode',$quantity,$price,$total_price, '$time')");
+    }
 }
 $base = new Database('web_store');
 

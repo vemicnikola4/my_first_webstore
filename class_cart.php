@@ -36,19 +36,23 @@ class Cart{
         echo "<tr>";
         echo "<td>".$this->cart_items[$i]['barcode']."</td>";
         echo "<td>".$this->cart_items[$i]['name']."</td>";
-        echo "<td>".$this->cart_items[$i]['price']."</td>";
+        echo "<td>".$this->cart_items[$i]['price']." e</td>";
         echo "<td>".$this->cart_items[$i]['quantity']."</td>";
-        echo "<td>".$item_total."</td>";
+        echo "<td>".$item_total." e</td>";
         echo "<td><a href='add_to_cart.php?action=add_quantity&barcode=$barcode'>+</a></td>";
         echo "<td><a href='add_to_cart.php?action=reduce_quantity&barcode=$barcode'>-</a></td>";
+        echo "<td><a href='add_to_cart.php?action=delite&barcode=$barcode'>DELETE</a></td>";
         echo "</tr>";
         $cart_total += $item_total;
         }
         echo "<br>";
-        echo "<tr><td>TOTAL</td><td></td><td></td><td></td><td>$cart_total</td></tr>";
+        echo "<tr style='border:none'><td style='border:none'>TOTAL</td><td style='border:none'></td><td style='border:none'></td><td style='border:none'></td><td style='border:none'>".$cart_total." e</td></tr>";
         echo "</table>";
         echo "<div>";
-        echo "<a href='add_to_cart.php?action=submit'>SUBMIT</a>";
+        echo "<a href='add_to_cart.php?action=delete_cart'>DELETE CART</a>";
+        echo "</div>";
+        echo "<div>";
+        echo "<a href='submit.php?action=submit'>SUBMIT</a>";
         echo "</div>";
         echo "</div >";
         $_SESSION['cart']=$this -> cart_items;
@@ -88,6 +92,12 @@ class Cart{
     function total_item(){
         for($i=0; $i<count($this->cart_items); $i++){
             $this->cart_items[$i]['item_total']= $this->cart_items[$i]['price'] * $this->cart_items[$i]['quantity']; 
+        }
+        $_SESSION['cart'] = $this->cart_items;
+    }
+    function delete_cart(){
+        for($i=0; $i<count($this->cart_items); $i++){
+            array_splice($this->cart_items, $i, 1);     
         }
         $_SESSION['cart'] = $this->cart_items;
     }
