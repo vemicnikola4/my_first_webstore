@@ -4,6 +4,7 @@ include_once "header_footer.php";
 include_once "style.css";
 echo "<div id='container'>";
 echo top_header();
+echo "<div class='form_div'>";
 if (isset($_SESSION['user']) || isset($_COOKIE['user'])){
     header ('Location:proizvodi.php');
 }
@@ -61,5 +62,6 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     
 }
 echo bottom_footer();
+echo "</div>";
 echo "</div>";
 ?>

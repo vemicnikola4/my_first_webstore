@@ -28,8 +28,7 @@ if ( isset( $_GET ['action']) && $_GET['action'] == 'delite'){
     $cart -> delite_item($barcode);
     header ("Location: add_to_cart.php");
 
-}
-    
+}   
 if ( isset( $_GET ['action']) && $_GET['action'] == 'reduce_quantity'){
     $barcode = $_GET['barcode'];
     $cart -> reduce_quantity($barcode);
@@ -41,11 +40,11 @@ if ( isset( $_GET ['action']) && $_GET['action'] == 'delete_cart'){
 }
 if ( isset( $_GET ['action']) && $_GET['action'] == 'submited'){
     $cart -> delete_cart();
-    echo "<p style='margin-left:50px'> Order number: " . $_SESSION['order_number']."</p>";
-    unset( $_SESSION['order_number']);
-
+       
+    header ("Location: add_to_cart.php");
 }
 $cart -> show_cart();
+
 
 echo "<p><a href='logout.php?action=unset'>Logout</a></p>";
 echo bottom_footer();
