@@ -18,22 +18,26 @@
 <div class='container' id='container'>
     <?php echo top_header(); ?>
     <div class='form_div'>
+    <div class='form_subdiv'>
    <form action="register.php">
+    <label><p>SING IN:</p></label>
     <input type="hidden" name="action" value="register">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="lastname" placeholder="lastname">
-    <input type="text" name="email" placeholder="email">
-    <input type="text" name="password" placeholder="password">
-    <input type="text" name="repeat_password" placeholder="repeat password">
-    <input type="submit" value="REGISTER">
+    <input class='text' type='text' name="name" placeholder="name">
+    <input class='text' type="text" name="lastname" placeholder="lastname">
+    <input class='text' type="text" name="email" placeholder="email">
+    <input class='text' type="text" name="password" placeholder="password">
+    <input class='text' type="text" name="repeat_password" placeholder="repeat password">
+    <input class='button' type="submit" value="REGISTER">
    </form>
     <form action="log_in.php">
         <input type="hidden" name="action" value="log_in_form">
-        <p>Allready have an account</p>
-        <input type="submit" value="log_in">
+        <p>Allready have an account?</p>
+        <input class='button' type="submit" value="LOG IN">
     </form>
+    </div>
     </div >
-    <?php echo bottom_footer(); ?>
 </div>
+<?php echo bottom_footer(); ?>
+
 </body>
 </html>

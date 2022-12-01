@@ -43,9 +43,13 @@ include_once "style.css";
 
        }
        echo "<p><a href='logout.php?action=unset'>Logout</a></p>";
-       echo bottom_footer();
+       
        
     ?>
     </div>
+    <?php
+    echo bottom_footer();
+
+    ?>
 </body>
 </html>

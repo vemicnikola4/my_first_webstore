@@ -61,7 +61,8 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     }
     
 }
-echo bottom_footer();
 echo "</div>";
+echo bottom_footer();
+
 echo "</div>";
 ?>

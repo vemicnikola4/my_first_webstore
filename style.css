@@ -6,7 +6,7 @@
     text-decoration: none;
 }
 #container{
-    background-color: beige; 
+    background-color: white; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,13 +17,22 @@
     height:80px;
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 220, 155);
+    background-color: #603F8B;
+    position:sticky;
+    top:0;    
+}
+.header h1, a{
+    color: black;
+}
+.header h1, a:hover{
+    color :#FD49A0;
     
 }
 .iner_header{
     width: 1000px;
-    background-color: beige;
+    background-color: #EAE7FA;
     display: flex;
+
 }
 .logo_container{
     display: flex;
@@ -48,13 +57,12 @@
     height: 150px;
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 220, 155);
-
+    background-color: #603F8B;
     bottom:0;
 }
 .footer_container .iner_footer{
     display: flex;
-    background-color: beige;
+    background-color:#EAE7FA;
     justify-content: center;
 }
 .footer_container .iner_footer .navigation{
@@ -70,10 +78,7 @@
     display: flex;
     flex: 2;
     justify-content: center;
-    background-color:  beige;
-    border-bottom: 5px solid;
-    border-top: 5px solid;
-    border-color: rgb(255, 220, 155);
+    
 
 }
 .product_container{
@@ -82,14 +87,17 @@
     text-align: center;
     margin: 25px;
     border: solid;
+    border-color: #603F8B;
+    box-shadow: 5px 5px 5px grey;
+    font-weight: bolder;
     border-radius: 5px;
     width: 400px;
-    background-color:rgb(255, 220, 155);
+    height: 450px;
 }
 .product_container img{
     width: 250px;
     height: 250px;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px  #603F8B;
 }
 .product_container table{
     margin-top: 20px;
@@ -102,5 +110,70 @@
 .form_div{
     flex: 1;
     padding: 50px 0 0 50px;
+}
+.form_subdiv{
+    border: solid ;
+    border-color: #603F8B;
+    box-shadow: 5px 5px 5px grey;
+    padding: 10px;
+    max-width: 400px;
+    
+}
+.form_subdiv input{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 35px;
+    box-shadow: 2px 2px 2px #603F8B;
+}
+.form_subdiv input.text {
+    padding-left: 5px;
+    width: 300px;
+}
+.form_subdiv p{
+    margin-left: 12px;
+    margin-top: 10px;
+    font-size: large;
+
+}
+.form_subdiv input.button{
+    font-weight: bold;
+    color: #603F8B;
+    width: 150px;
+
+}
+.form_subdiv input.button:hover{
+    cursor: pointer;
+    background-color: #B4FEE7;
+}
+.log_in_div{
+    border: solid ;
+    border-color: #603F8B;
+    box-shadow: 5px 5px 5px grey;
+    padding: 10px;
+    max-width: 400px;
+}
+.log_in_div input {
+    font-weight: bold;
+    color: #603F8B;
+    width: 150px;
+}
+.log_in_div input.text{
+    padding-left: 5px;
+    width: 300px;
+    height: 35px;
+    margin-top: 10px;
+}
+.log_in_div p{
+    margin-left: 8px;
+    margin-top: 10px;
+    font-size: large;
+}
+.log_in_div p input{
+    margin-left: -30px;
+}
+.log_in_div input.button{
+    height:35px;
+    width: 150px;
+
 }
 </style>
