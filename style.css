@@ -176,4 +176,34 @@
     width: 150px;
 
 }
+.button{
+    height:35px;
+    width: 150px;
+    border-color: #603F8B;
+    color: #603F8B;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 10px;
+}
+.button:hover{
+    cursor: pointer;
+    background-color: #B4FEE7;
+}
+#search_form input.text{
+    padding-left: 5px;
+    width: 300px;
+    height: 35px;
+    margin-top: 10px;
+}
+#my_order{
+    border: solid;
+    border-color: #FD49A0;
+    width: 400px;
+    padding: 10px;
+    padding-bottom: 15px;
+    font-weight: bolder;
+    box-shadow: 5px 5px 5px #FD49A0;
+
+}
 </style>

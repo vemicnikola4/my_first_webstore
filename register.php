@@ -19,7 +19,8 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         //this function only checks if the input looks like an email. If we whant to realy check if the email is real we need send a email to that address and ask a person to click on link we just sent so the validation process is complet.
         $emailErr = "Invalid email format";
-        die ("Invalid email format");
+        echo "<a href='index.php' style='margin-bottom: 25px;'>BACK TO REGISTRATION FORM</a><br>";
+        die ("Invalid");
     }else{
         if ( $password == $repeat_password){
         $have_account = false;
@@ -29,7 +30,8 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
             }
         }
         if ( $have_account == true){
-            echo "already have an account";
+            echo "<div class='log_in_div'>";
+            echo "<p>ALREADY HAVE AN ACCOUNT</p>";
             echo  '<form action="log_in.php">';
             echo  '<input type="hidden" name="action" value="log_in">';
             echo  '<input type="text" name="email" placeholder="email">';
@@ -40,22 +42,30 @@ if ( isset( $_GET['action']) && $_GET['action'] == 'register'){
             echo "<br>";
             echo  '<input type="submit" value="log_in">';
             echo  '</form>';
+            echo "</div>";
         }else{
-            $base -> insert_user($email,$password,$name);
-            echo "Successfully registrated!";
-            echo  '<form action="log_in.php">';
-            echo  '<input type="hidden" name="action" value="log_in">';
-            echo  '<input type="text" name="email" placeholder="email">';
-            echo  '<input type="text" name="password" placeholder="password">';
-            echo "<br>";
-            echo "Remember me on this computer";
-            echo  '<input type="checkbox" name="remember">';
-            echo "<br>";
-            echo  '<input type="submit" value="log_in">';
-            echo  '</form>';
+            if ( $name !== "" && $password !== "" && $email !== ""){
+                $base -> insert_user($email,$password,$name);
+                echo "<div class='log_in_div'>";
+                echo "Successfully registrated!";
+                echo  '<form action="log_in.php">';
+                echo  '<input type="hidden" name="action" value="log_in">';
+                echo  '<input type="text" name="email" placeholder="email">';
+                echo  '<input type="password" name="password" placeholder="password">';
+                echo "<br>";
+                echo "Remember me on this computer";
+                echo  '<input type="checkbox" name="remember">';
+                echo "<br>";
+                echo  '<input type="submit" value="log_in">';
+                echo  '</form>';
+                echo "</div>";
+            }else{
+                echo "<p><a href='index.php'>Insert name, email and pasword</a></p>";
+            }
+            
         }
     }else{
-        echo "REPEAT THE SAME PASSWORD";
+        echo "<p>REPEAT THE SAME PASSWORD</p><br>";
         echo "<a href='index.php'>BACK TO REGISTRATION FORM</a>";
         }
     }

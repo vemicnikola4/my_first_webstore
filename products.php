@@ -18,6 +18,16 @@ include_once "style.css";
     <?php  
         echo top_header();
        if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
+        echo "<div class='form_div' id='search_form'>";
+        echo "<div id='my_order'>";
+        echo "<form action='search_order.php'>";
+        echo "<p>MY ORDERS: </p>";
+        echo  '<input type="hidden" name="action" value="search_order">';
+        echo "<input class='text' type='text' name='order_number' placeholder='order number'><br>";
+        echo "<input class='button' type='submit' value='search'>";
+        echo "</form>";
+        echo "</div>";
+        echo "</div>";
         echo "<div class='all_products_container'>";
            $products = $base -> show_all_products();
            for ( $i = 0; $i < count($products);$i++ ){
@@ -37,7 +47,7 @@ include_once "style.css";
        }else{
         echo "<div class='form_div'>";
         echo "<p>NISTE ULOGOVANI</p>";
-        echo "<a href='index.php'>ULOGUJTE SE</a>";
+        echo "<a href='index.php'><button class='button'>ULOGUJTE SE</button></a>";
         echo "</div>";
         
 
