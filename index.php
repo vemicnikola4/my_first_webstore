@@ -25,8 +25,8 @@
     <input class='text' type='text' name="name" placeholder="name">
     <input class='text' type="text" name="lastname" placeholder="lastname">
     <input class='text' type="text" name="email" placeholder="email">
-    <input class='text' type="password" name="password" placeholder="password">
-    <input class='text' type="password" name="repeat_password" placeholder="repeat password">
+    <input class='text' type="text" name="password" placeholder="password">
+    <input class='text' type="text" name="repeat_password" placeholder="repeat password">
     <input class='button' type="submit" value="REGISTER">
    </form>
     <form action="log_in.php">

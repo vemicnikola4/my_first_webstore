@@ -46,7 +46,7 @@ if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
 }else{
     echo "<div class='form_div'>";
         echo "<p>NISTE ULOGOVANI</p>";
-        echo "<a href='index.php'><button class='button'>ULOGUJTE SE</button></a></a>";
+        echo "<a href='index.php'>ULOGUJTE SE</a>";
         echo "</div>";
 }
 
