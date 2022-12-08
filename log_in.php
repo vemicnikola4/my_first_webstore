@@ -35,7 +35,7 @@ if (isset($_GET['action'])&& $_GET['action'] == "log_in"){
         echo  '<form action="log_in.php">';
         echo  '<input type="hidden" name="action" value="log_in">';
         echo  '<input class="text" type="text" name="email" placeholder="email">';
-        echo  '<input class="text" type="password" name="password" placeholder="password">';
+        echo  '<input class="text" type="text" name="password" placeholder="password">';
         echo "<br>";
         echo  '<p>Remember me on this computer <input type="checkbox" name="remember"></p>';
         echo "<br>";
@@ -51,7 +51,7 @@ if (isset($_GET['action'])&& $_GET['action'] !== "log_in"){
     echo  '<form action="log_in.php">';
     echo  '<input type="hidden" name="action" value="log_in">';
     echo  '<input class="text" type="text" name="email" placeholder="email">';
-    echo  '<input class="text" type="password" name="password" placeholder="password">';
+    echo  '<input class="text" type="text" name="password" placeholder="password">';
     echo  '<br>';
     echo  '<p>Remember me on this computer <input type="checkbox" name="remember"></p>';
     echo  '<br>';
