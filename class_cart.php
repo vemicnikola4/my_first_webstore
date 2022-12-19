@@ -39,8 +39,8 @@ class Cart{
         echo "<td>".$this->cart_items[$i]['price']." e</td>";
         echo "<td>".$this->cart_items[$i]['quantity']."</td>";
         echo "<td>".$item_total." e</td>";
-        echo "<td><a href='add_to_cart.php?action=add_quantity&barcode=$barcode'>+</a></td>";
-        echo "<td><a href='add_to_cart.php?action=reduce_quantity&barcode=$barcode'>-</a></td>";
+        echo "<td><a  href='add_to_cart.php?action=add_quantity&barcode=$barcode'><button style='width:100px'>+</button></a></td>";
+        echo "<td><a  href='add_to_cart.php?action=reduce_quantity&barcode=$barcode'><button style='width:100px'>-</button></a></td>";
         echo "<td><a href='add_to_cart.php?action=delite&barcode=$barcode'>DELETE</a></td>";
         echo "</tr>";
         $cart_total += $item_total;

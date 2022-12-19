@@ -8,6 +8,9 @@ include_once "header_footer.php";
 echo "<div id='container'>";
 echo top_header();
 $cart-> total_item();
+if ( !isset($_SESSION['order_number'])){
+    $_SESSION['order_number']=mt_rand(10000000,999999999);
+}
 if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
     if ( isset( $_GET ['action']) && $_GET['action'] == 'add_to_cart'){
         $order_number=$_SESSION['order_number'];
@@ -45,8 +48,8 @@ if ( isset($_SESSION['user']) || isset($_COOKIE['user'])){
 
 }else{
     echo "<div class='form_div'>";
+        echo "<p><a class='button' href='index.php'>ULOGUJTE SE</a></p><br>";
         echo "<p>NISTE ULOGOVANI</p>";
-        echo "<a href='index.php'>ULOGUJTE SE</a>";
         echo "</div>";
 }
 

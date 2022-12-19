@@ -105,6 +105,20 @@ class Database{
 
         echo "</div >";
     }
+    function find_product($barcode){
+        $product = $this-> select("SELECT * FROM cart WHERE order_number=$order_number");
+        if ($product['sucssesful'] == true){
+            return $product['array'];
+        }else{
+            die( "NEUSPESAN UPIT ". $product['message']);
+        }
+    }
+    function show_product($barcode){
+        $product = $this -> find_product($barcode);
+        for ( $i = 0; $i < count ($product); $i++){
+            
+        }
+    }
 }
 $base = new Database('web_store');
 

@@ -7,9 +7,6 @@ include_once "style.css";
 echo "<div id='container'>";
 echo top_header();
 echo "<div class='form_div'>";
-if ( !isset($_SESSION['order_number'])){
-    $_SESSION['order_number']=mt_rand(10000000,999999999);
-}
 if ( isset( $_GET['action']) && $_GET['action'] == 'submit'){
     $time = date ( 'Y-m-d H-i-s');
     $cart = $_SESSION['cart'];
